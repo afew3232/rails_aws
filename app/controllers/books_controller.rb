@@ -10,8 +10,7 @@ class BooksController < ApplicationController
 
 	def create
 		@book = Book.new(post_book_params)
-
-		#@book.user_id = current_user.id
+		@book.user_id = current_user.id
 		@books = Book.all
 			if @book.save
 			redirect_to user_path(current_user.id)
@@ -22,7 +21,7 @@ class BooksController < ApplicationController
 
 	private
 	def post_book_params
-		params.require(:book).permit(:title,:body)
+		params.require(:book).permit(:title,:body,:user_id)
 		#これをすることで、よきせぬパラメータが入るのを防ぐ
 		#例えばHTML側から :phonenumberが送られてきても、入らなくなる。
 	end

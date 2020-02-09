@@ -10,7 +10,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th></th>
+						<th>ID</th>
 						<th>Title</th>
 						<th>Opinion</th>
 					</tr>
@@ -19,9 +19,9 @@
 				<% @books.each do |f| %>
 				<tbody>
 					<tr>
-						<td>picture</td>
-						<td><% f.title %></td>
-						<td><% f.body %></td>
+						<td><%= f.user_id %></td>
+						<td><%= f.title %></td>
+						<td><%= f.body %></td>
 					</tr>
 				</tbody>
 				<% end %>
