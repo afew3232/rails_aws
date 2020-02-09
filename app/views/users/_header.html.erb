@@ -1,11 +1,28 @@
 <header>
-	<span class="color-white">Bookers</span>
-	<!--ログイン未-->
-	<%= link_to "Home", root_path, class: "header-info" %>
-	<%= link_to "About", homes_about_path, class: "header-info" %>
-	<%= link_to "sign up", new_user_registration_path, class: "header-info" %> 
-	<p class="header-info">login</p>
+	<div class="header-container">
+		<span class="color-white">Bookers</span>
 
-	<!--ログイン中-->
+		<!--if ログイン中-->
+		<% if user_signed_in? %>
+		<nav>
+			<ul class="header-ul">
+				<li><%= link_to "Home", user_path(current_user.id), class: "header-info" %></li>
+				<li><%= link_to "Users", users_path, class: "header-info" %></li>
+				<li><%= link_to "Books", books_path, class: "header-info" %></li>
+				<li><%= link_to "logout", destroy_user_session_path, method: :delete, class: "header-info" %></li>
+			</ul>
+		</nav>
+		<!--else ログイン未-->
+		<% else %>
+		<nav>
+			<ul class="header-ul">
+				<li><%= link_to "Home", root_path, class: "header-info" %></li>
+				<li><%= link_to "About", homes_about_path, class: "header-info" %></li>
+				<li><%= link_to "sign up", new_user_registration_path, class: "header-info" %></li>
+				<li><%= link_to "login", new_user_session_path, class: "header-info" %></li>
+			</ul>
+		</nav>
+		<% end %> <!--if else end-->
 
+	</div>
 </header>

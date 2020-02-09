@@ -1,2 +1,15 @@
 <%= render "users/header" %>
-<h1>root</h1>
+
+<div class="root-container">
+	<div class="root-title">
+		<h1>Welcome to <strong>Bookers!!</strong></h1>
+		<p>In Bookers</p>
+		<p>you can share and exchange your opinions , inpressions , and emotions about various books!</p>
+	</div>
+	<%= link_to "Log in", new_user_session_path, class: "root-login" %>
+	<%= link_to "Sign Up", new_user_registration_path, class: "root-sign-up" %>
+
+
+
+
+</div>

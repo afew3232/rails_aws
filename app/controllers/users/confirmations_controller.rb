@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
+
+  def after_sign_in_path_for(resource)
+    redirect_to user_path(user_id: resource.id)
+  end
   # GET /resource/confirmation/new
   # def new
   #   super
