@@ -1,3 +1,35 @@
 <%= render "users/header" %>
 
-<h1>books index</h1>
+<div class=container>
+	<div class=row>
+		<%= render "users/info" %>
+		<div class="col-lg-9">
+		<h1>books</h1>
+
+
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Opinion</th>
+					</tr>
+				</thead>
+
+				<% @books.each do |f| %>
+				<tbody>
+					<tr>
+						<td>picture</td>
+						<td><% f.title %></td>
+						<td><% f.body %></td>
+					</tr>
+				</tbody>
+				<% end %>
+
+
+			</table>
+
+
+		</div><!--col-9-->
+	</div><!--row-->
+</div>

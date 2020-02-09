@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+
 .clearfix::after{
 	content:"";
 	display:block;
@@ -44,4 +49,16 @@ header{
 	color:#9d9d9d;
 	float:left;
 	padding:15px;
+}
+
+
+
+
+.show-main{
+	width:100%;
+}
+
+.error-main{
+	width:100%;
+	color:red;
 }
