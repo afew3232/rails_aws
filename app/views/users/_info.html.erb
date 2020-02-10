@@ -18,8 +18,23 @@
 	<div class="info-image">
 	</div>
 
-	<p>name</p>
-	<p>introduction</p>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>name</th>
+				<th><%= @user.name %></th>
+			</tr>
+			<tr>
+				<th>introduction</th>
+				<th><%= @user.introduction %></th>
+
+			</tr>
+		</tbody>
+	</table>
+
+
+	<%= link_to "user edit",edit_user_path(current_user.id) %>
 
 	<h2>New book</h2>
 	<%= form_for(@book, url: books_path) do |f| %> <!--book#createを呼ぶ-->

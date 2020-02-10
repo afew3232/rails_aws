@@ -1,0 +1,38 @@
+<%= render "users/header" %>
+
+<div class="container">
+	<div class="row">
+		<%= render "users/info" %>
+		<div class="col-lg-9">
+			<h2>Book detail</h2>
+
+				<!--ログイン中ユーザーのid == Bookのuser_id-->
+				<% if current_user.id == @book_show.user_id %>
+				<table>
+					<tbody>
+						<tr>
+							<td>image</td>
+							<td><%= link_to @book_show.title, book_path(@book_show.id) %></td>
+							<td><%= @book.body %></td>
+							<td><%= link_to "Edit",edit_book_path(@book_show.id) %></td>
+							<td><%= link_to "Destroy", book_path(@book_show.id), method: :delete,data: {confirm: "本当に消しますか？"} %></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!--ログイン中のユーザーのid != Bookのuser_id-->
+				<% else %>
+				<table>
+					<tbody>
+						<tr>
+							<td>image</td>
+							<td><%= link_to @book.title, book_path(@book.id) %></td>
+							<td><%= @book.body %></td>
+						</tr>
+					</tbody>
+				</table>
+				<% end %>
+
+		</div> <!--col-9-->
+	</div> <!--row-->
+</div> <!--container-->
