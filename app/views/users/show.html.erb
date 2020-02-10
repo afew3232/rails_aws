@@ -4,7 +4,45 @@
 		<%= render "users/info" %>
 
 		<div class="col-lg-9">
-			<h1>show</h1>
+			<h2>Books</h2>
+
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Opinion</th>
+					</tr>
+				</thead>
+
+				<!--ログイン中のid == Book.user_idだった Bookのデータのみ表示する-->
+				<% @books.each do |f| %>
+					<% if current_user.id == f.user_id %>
+						<tbody>
+							<tr>
+								<td>image</td>
+								<td><%= f.title %></td>
+								<td><%= f.body %>	</td>
+							</tr>
+						</tbody>
+					<% end %>
+				<% end %>
+
+				</table>
+
+		</div>
+
+
+	</div> <!--row-->
+</div> <!--container-->
+
+<footer>
+<div class="container">
+		<div class="row">
+		<div class="col-lg-9"></div>
+		<div class="col-lg-3">
+			<p>CopyRight Infratop.inc</p>
 		</div>
 	</div>
 </div>
+</footer>
