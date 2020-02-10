@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 	def show
 		@book = Book.new
-		@user = User.find(current_user.id)
+		@user = User.find(params[:id])
 		@users = User.all
 		@books = Book.all
 	end
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
+		#refileなので profile_imageの_idは抜く
 		params.require(:user).permit(:name, :profile_image, :introduction)
 	end
 end

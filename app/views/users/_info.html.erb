@@ -16,7 +16,19 @@
 <div class="col-lg-3">
 	<h2>User info</h2>
 	<div class="info-image">
-	<%= image_tag attachment_url(@user, :profile_image, :fill, 60, 60) %>
+
+
+
+	<!--Userの画像がある場合-->
+	<% if @user.profile_image_id != nil %>
+		<!--refileなので profile_imageの_idは抜く-->
+		<%= image_tag attachment_url(@user, :profile_image, :fill, 60, 60) %>
+
+	<!--Userの画像がない場合-->
+	<% else %>
+		<%= image_tag 'no-image.jpg', size: '60x60' %>
+
+	<% end %>
 	</div>
 
 
@@ -29,7 +41,6 @@
 			<tr>
 				<th>introduction</th>
 				<th><%= @user.introduction %></th>
-
 			</tr>
 		</tbody>
 	</table>
