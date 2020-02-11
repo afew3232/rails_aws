@@ -15,44 +15,199 @@
  */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+*{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    margin: 0;
+}
 .clearfix::after{
 	content:"";
 	display:block;
 	clear:both;
 }
+p,ol,ul,td{
+	font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 33px;
+}
 
 .color-white{color:white;}
-
+.nav{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
 
 header{
-	width:100%;
-	height:70px;
-	z-index:100;
+    background-color: #222;
+    border-color: #090909;
+    top: 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid transparent;
+    color: white;
+    padding-top:0px
+}
+header:after{
+    clear: both;
+    content: " ";
+    display: table;
 }
 .header-container{
-	background-color:black;
-	width:100%;
-	height:50px;
-	position:fixed;
-	top:0;
-	left:0;
+	width:1170px;
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.header-container:after {
+    clear: both;
+}
+.header-container:before, .header-container:after {
+    content: " ";
+    display: table;
+}
+.header-title-nav{
+	float: left !important;
+	margin: 0;
+    border: 0px solid transparent;
+
+    padding-left: 0;
+    list-style: none;
+}
+.header-title{
+    font-size: 20px;
+    padding-top: 10px;
 }
 .header-ul{
-	float:right;
-	list-style:none;
-	display:flex;
+    float: right !important;
+	margin:0px -15px 0px 0px;
+    padding-left: 0;
+    list-style: none;
+    font-size: 13px;
+    line-height: 18px;
+}
+.header-li{
+	float:left;
+	position: relative;
+    display: block;
 }
 .header-info{
 	color:#9d9d9d;
-	float:left;
 	padding:15px;
+	line-height:20px;
+    display: block;
+	position:relative
+}
+.header-info:hover{
+	color:white;
+	text-decoration: none;
 }
 
 
 
+
+
+
+
+.root-body{
+	margin-top:51px;
+}
+.root-body p{
+	margin:0 0 10px;
+}
+.root-title{
+	font-size:36px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.root-btn1, .root-btn2{
+	color:#666;
+}
+.root-btn1:hover{
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.root-btn2:hover{
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+
+
+.signup-body{
+	margin-top:51px;
+}
+.signup-title{
+	font-size:30px;
+	margin-top:20px;
+	margin-bottom:10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.signup-field{
+	margin-bottom:10px;
+}
+.signup-label{
+	display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.signup-actions{
+	margin-bottom:10px;
+}
+.btn-success:hover{
+	color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+
+.login-body{
+	margin-top:51px;
+}
+.login-field{
+	margin-bottom:10px;
+}
+.login-label{
+	display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.login-actions{
+	margin-bottom:10px;
+}
+.btn-primary:hover{
+	color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
 
 .show-main{
 	width:100%;
@@ -73,5 +228,7 @@ header{
 
 
 footer{
-	width:100%;
+}
+footer p{
+	margin: 0 0 10px;
 }
