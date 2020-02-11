@@ -1,35 +1,51 @@
 <%= render "users/header" %>
 
-<div class=container>
-	<div class=row>
-		<%= render "users/info" %>
-		<div class="col-lg-9">
-		<h1>books</h1>
+<div class="book-index-body">
+	<div class="container">
+		<!--notice-->
+		<p></p>
+		<div class="row">
+			<%= render "users/info" %>
+			<div class="col-lg-9">
+				<h2>Books</h2>
 
 
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Title</th>
-						<th>Opinion</th>
-					</tr>
-				</thead>
+				<table class="table">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Title</th>
+							<th>Opinion</th>
+							<th calspan="3"></th>
+						</tr>
+					</thead>
 
-				<% @books.each do |f| %>
-				<tbody>
-					<tr>
-						<td><%= f.user_id %></td>
-						<td><%= link_to f.title, book_path(f.id) %></td>
-						<td><%= f.body %></td>
-					</tr>
-				</tbody>
-				<% end %>
+					<tbody>
+					<% @books.each do |f| %>
+						<tr>
+							<td>
+								<% i = @users.find(f.user_id) %>
+								<% if i.profile_image_id != nil %> <!--Userの画像がある場合-->
+								<!--refileなので profile_imageの_idは抜く-->
+									<%= image_tag attachment_url(i, :profile_image, :fill, 50, 50) %>
+								<% else %> <!--Userの画像がない場合-->
+									<%= image_tag 'no-image.jpg', size: '40x40' %>
+								<% end %>
+								<%=  link_to i.name, user_path(i.id) %>
+							</td>
+							<td><%= link_to f.title, book_path(f.id) %></td>
+							<td><%= f.body %></td>
+						</tr>
+					<% end %>
+					</tbody>
 
 
-			</table>
+				</table>
 
 
-		</div><!--col-9-->
-	</div><!--row-->
+			</div><!--col-9-->
+		</div><!--row-->
+	</div>
 </div>
+
+<%= render "users/footer" %>
