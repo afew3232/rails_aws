@@ -34,13 +34,33 @@ body{
 	display:block;
 	clear:both;
 }
-p,ol,ul,td{
+h2{
+	font-size: 30px;
+	margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+ol,ul,td{
 	font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 18px;
     margin: 33px;
 }
+p{
+	font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+	margin: 0 0 10px;
+}
 
+.table{
+	width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
 .color-white{color:white;}
 .nav{
 	margin:0px;
@@ -208,6 +228,37 @@ header:after{
     background-color: #286090;
     border-color: #204d74;
 }
+
+
+
+
+.info-th{
+	padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.info-field, .info-actions{
+	margin-bottom:10px;
+}
+.info-label{
+	display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+
+.user-show-body{
+	margin-top:51px;
+}
+
+
+.user-index-body{
+	margin-top:51px;
+}
+
 
 .show-main{
 	width:100%;
