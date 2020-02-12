@@ -153,8 +153,6 @@ header:after{
 
 
 
-
-
 .root-body{
 	margin-top:51px;
 }
@@ -274,7 +272,14 @@ header:after{
 .book-edit-body{
     margin-top:51px;
 }
+.forgot-password-body{
+    margin-top:51px;
+}
 
+
+.forgot-password-field, .forgot-password-actions{
+    margin-bottom:10px
+}
 
 
 .book-edit-label{

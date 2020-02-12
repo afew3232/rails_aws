@@ -1,18 +1,43 @@
+<%= render "users/header" %>
 
-	<h2>Forgot your password?</h2>
+<div class="forgot-password-body">
+	<div class="container">
+		<!--notice-->
+		<p></p>
 
-	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-	<%= render "devise/shared/error_messages", resource: resource %>
+		<h2>Forgot your password?</h2>
 
-	<div class="field">
-		<%= f.label :email %><br />
-		<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+		<% if resource.errors.any? %>
+		<div class="error-main" id="error_explanation">
+			<% if resource.errors.count == 1 %>
+				<h2><%= resource.errors.count %> error prohibited this user from being saved:</h2>
+			<% end %>
+			<% if 2 <= resource.errors.count %>
+				<h2><%= resource.errors.count %> errors prohibited this user from being saved:</h2>
+			<% end %>
+			<ul class="error-ul">
+				<% resource.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+
+
+
+		<div class="forgot-password-field">
+			<%= f.label :email %><br />
+			<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+		</div>
+
+		<div class="forgot-password-actions">
+			<%= f.submit "Send me reset password instructions", class: "btn btn-danger" %>
+		</div>
+		<% end %>
+
+		<%= render "users/shared/links" %>
 	</div>
-
-	<div class="actions">
-		<%= f.submit "Send me reset password instructions" %>
-	</div>
-	<% end %>
-
-	<%= render "users/shared/links" %>
+</div>
 <%= render "users/footer" %>
