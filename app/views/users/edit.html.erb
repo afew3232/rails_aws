@@ -1,13 +1,33 @@
-<h2>User info</h2>
-<%= form_for @user do |f| %>
-	<p>Name</p>
-	<%= f.text_field :name %>
-	<p>Image</p>
-	<!--refileなので profile_imageの_idは抜く-->
-	<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
-	<p>Introduction</p>
-	<%= f.text_area :introduction %>
-	<%= f.submit %>
+<%= render "users/header" %>
 
+<div class="user-edit-body">
+	<div class="container">
+		<!--notice-->
+		<p></p>
+		<% if flash[:notice] != nil %>
+			<p><%= flash[:notice] %></p>
+		<% end %>
 
-<% end %>
+		<h2>User info</h2>
+		<%= form_for @user do |f| %>
+		<div class="user-edit-field">
+			<label class="user-edit-label">Name</label>
+			<%= f.text_field :name %>
+		</div>
+		<div class="user-edit-field">
+			<label class="user-edit-label">Image</label>
+			<!--refileなので profile_imageの_idは抜く-->
+			<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+		</div>
+		<div class="user-edit-field">
+			<label class="user-edit-label">Introduction</label>
+			<%= f.text_area :introduction %>
+		</div>
+		<div class="user-edit-actions">
+			<%= f.submit %>
+		</div>
+
+		<% end %>
+	</div>
+</div>
+<%= render "users/footer" %>

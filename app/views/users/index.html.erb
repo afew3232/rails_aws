@@ -4,6 +4,9 @@
 	<div class="container">
 		<!--notice-->
 		<p></p>
+		<% if flash[:notice] != nil %>
+			<p><%= flash[:notice] %></p>
+		<% end %>
 		<div class="row">
 			<%= render "users/info" %>
 			<div class="col-lg-9">

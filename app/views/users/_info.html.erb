@@ -2,16 +2,7 @@
 <!--col-xl-3使用中　呼び出し元でcol-xl-9すること-->
 <!--呼び出し元で、 class=contine, class=rowの内部に書くこと-->
 
-<% if @book.errors.any? %>
-<div class="error-main" id="error_explanation">
-	<h2><%= @book.errors.count %>errors prohibitedd this obj from being saved:</h2>
-	<ul>
-		<% @book.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
+
 
 <div class="col-lg-3">
 	<h2>User info</h2>

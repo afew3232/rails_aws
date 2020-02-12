@@ -4,6 +4,9 @@
 	<div class="container">
 		<!--notice-->
 		<p></p>
+		<% if flash[:notice] != nil %>
+			<p><%= flash[:notice] %></p>
+		<% end %>
 		<div class="row">
 			<%= render "users/info" %>
 
@@ -21,9 +24,10 @@
 					</thead>
 
 					<!--ログイン中のid == Book.user_idだった Bookのデータのみ表示する-->
+					<!--@user.id == book.user_id表示する-->
 					<tbody>
 					<% @books.each do |f| %>
-					<% if current_user.id == f.user_id %>
+					<% if @user.id == f.user_id %>
 						<tr>
 							<td>
 								<% if @user.profile_image_id != nil %> <!--Userの画像がある場合-->

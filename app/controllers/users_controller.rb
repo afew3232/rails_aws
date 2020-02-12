@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(current_user.id)
 		@user.update(user_params)
+		flash[:notice] ="You have updated user successfully."
 		redirect_to books_path
 	end
 
