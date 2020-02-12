@@ -2,11 +2,14 @@
 
 <div class="root-body">
 	<div class="container">
+		
 		<!--notice-->
-		<p></p>
 		<% if flash[:notice] != nil %>
-			<p><%= flash[:notice] %></p>
+			<p class="notice"><%= flash[:notice] %></p>
+		<% else %>
+			<p></p>
 		<% end %>
+
 		<div class="row">
 			<div class="col-lg-6 col-md-offset-3">
 				<h1 class="root-title">welcome to <span class="glyphicon glyphicon-book"><strong>Bookers</strong>  !!</span></h1>
