@@ -1,6 +1,6 @@
 <%= render "users/header" %>
 
-<div class="user-edit-body">
+<div class="margin-top-51px">
 	<div class="container">
 		<!--notice-->
 		<p></p>
@@ -34,7 +34,7 @@
 		<div class="user-edit-field">
 			<label class="user-edit-label">Image</label>
 			<!--refileなので profile_imageの_idは抜く-->
-			<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+			<%= f.attachment_field :profile_image, class: "user-edit-form" %>
 		</div>
 		<div class="user-edit-field">
 			<label class="user-edit-label">Introduction</label>

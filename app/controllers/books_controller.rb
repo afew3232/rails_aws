@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+	before_action :authenticate_user!
 	def index
 		@book = Book.new
 		@user = User.find(current_user.id)
@@ -24,10 +25,10 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		@book = Book.new
-		@user = User.find(current_user.id)
-		@users = User.all
+		@book = Book.new #infoに自分のbook editを表示する。
 		@book_show = Book.find(params[:id])
+		@user = User.find(@book_show.user_id) #infoにも本の持ち主を表示する
+		@users = User.all
 	end
 
 	def edit
@@ -40,7 +41,7 @@ class BooksController < ApplicationController
 	def update
 		@book = Book.find(params[:id])
 		if @book.update(book_params)
-			flash[:notice] = "succssfully"
+			flash[:notice] = "You have updated book successfully."
 			redirect_to book_path()
 		else
 			render :edit

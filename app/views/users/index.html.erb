@@ -1,6 +1,6 @@
 <%= render "users/header" %>
 
-<div class="user-index-body">
+<div class="margin-top-51px">
 	<div class="container">
 		<!--notice-->
 		<p></p>
@@ -8,7 +8,7 @@
 			<p><%= flash[:notice] %></p>
 		<% end %>
 		<div class="row">
-			<%= render "users/info" %>
+			<%= render "users/info", user: @user, book: @book %>
 			<div class="col-lg-9">
 				<h2>Users</h2>
 

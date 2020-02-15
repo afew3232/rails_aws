@@ -8,23 +8,19 @@
 	<h2>User info</h2>
 
 	<div class="info-image">
-		<% if @user.profile_image_id != nil %> <!--Userの画像がある場合-->
-		<!--refileなので profile_imageの_idは抜く-->
-		<%= image_tag attachment_url(@user, :profile_image, :fill, 100, 100) %>
-		<% else %> <!--Userの画像がない場合-->
-		<%= image_tag 'no-image.jpg', size: '100x100' %>
-		<% end %>
+		<%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no-image.jpg" %>
+
 	</div> <!--info-image-->
 
 	<table class="table">
 		<tbody>
 			<tr>
 				<th class="info-th">name</th>
-				<th class="info-th"><%= @user.name %></th>
+				<th class="info-th"><%= user.name %></th>
 			</tr>
 			<tr>
 				<th class="info-th">introduction</th>
-				<th class="info-th"><%= @user.introduction %></th>
+				<th class="info-th"><%= user.introduction %></th>
 			</tr>
 		</tbody>
 	</table>
@@ -34,7 +30,7 @@
 	</div>
 
 	<h2>New book</h2>
-	<%= form_for(@book, url: books_path) do |f| %> <!--book#createを呼ぶ-->
+	<%= form_for(book, url: books_path) do |f| %> <!--book#createを呼ぶ-->
 	<div class="row info-field">
 		<label class="info-label">Title</label>
 		<%= f.text_field :title,class: "col-xs-12" %>

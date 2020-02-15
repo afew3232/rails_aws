@@ -1,6 +1,6 @@
 <%= render "users/header" %>
 
-<div class="book-index-body">
+<div class="margin-top-51px">
 	<div class="container">
 		<!--notice-->
 		<p></p>
@@ -26,7 +26,7 @@
 		<% end %>
 
 		<div class="row">
-			<%= render "users/info" %>
+			<%= render "users/info", user: @user, book: @book %>
 			<div class="col-lg-9">
 				<h2>Books</h2>
 
@@ -43,16 +43,19 @@
 
 					<tbody>
 						<% @books.each do |f| %>
-						<tr>
+						<tr class="tr">
 							<td>
 								<% i = @users.find(f.user_id) %>
 								<% if i.profile_image_id != nil %> <!--Userの画像がある場合-->
 								<!--refileなので profile_imageの_idは抜く-->
-								<%= image_tag attachment_url(i, :profile_image, :fill, 50, 50) %>
+										<%= link_to user_path(i.id) do %>
+											<%= image_tag attachment_url(i, :profile_image, :fill, 50, 50) %>
+										<% end %>
 								<% else %> <!--Userの画像がない場合-->
-								<%= image_tag 'no-image.jpg', size: '40x40' %>
+										<%= link_to user_path(i.id) do %>
+											<%= image_tag 'no-image.jpg', size: '40x40' %>
+										<% end %>
 								<% end %>
-								<%=  link_to i.name, user_path(i.id) %>
 							</td>
 							<td><%= link_to f.title, book_path(f.id) %></td>
 							<td><%= f.body %></td>

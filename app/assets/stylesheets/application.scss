@@ -66,7 +66,11 @@ p{
     max-width: 100%;
     margin-bottom: 20px;
 }
+.tr:hover{
+    background-color: #f5f5f5;
+}
 .color-white{color:white;}
+.color-#666666{color:#666666;}
 .nav{
 	margin:0px;
 	padding:0px;
@@ -75,6 +79,9 @@ p{
 
 .notice{
     color:green;
+}
+.margin-top-51px{
+    margin-top:51px;
 }
 
 header{
@@ -150,12 +157,6 @@ header:after{
 }
 
 
-
-
-
-.root-body{
-	margin-top:51px;
-}
 .root-body p{
 	margin:0 0 10px;
 }
@@ -183,10 +184,6 @@ header:after{
 }
 
 
-
-.signup-body{
-	margin-top:51px;
-}
 .signup-title{
 	font-size:30px;
 	margin-top:20px;
@@ -215,9 +212,6 @@ header:after{
 }
 
 
-.login-body{
-	margin-top:51px;
-}
 .login-field{
 	margin-bottom:10px;
 }
@@ -237,8 +231,6 @@ header:after{
 }
 
 
-
-
 .info-th{
 	padding: 8px;
     line-height: 1.42857143;
@@ -253,27 +245,6 @@ header:after{
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-
-
-.user-show-body{
-	margin-top:51px;
-}
-.user-index-body{
-	margin-top:51px;
-}
-.book-index-body{
-	margin-top:51px;
-}
-.book-show-body{
-	margin-top:51px;
-}
-.book-edit-body{
-    margin-top:51px;
-}
-.forgot-password-body{
-    margin-top:51px;
 }
 
 
@@ -296,9 +267,6 @@ header:after{
 }
 
 
-.user-edit-body{
-    margin-top:51px;
-}
 .user-edit-label{
     display: inline-block;
     max-width: 100%;
@@ -310,10 +278,10 @@ header:after{
 }
 
 
-
 .show-main{
 	width:100%;
 }
+
 
 .error-main{
 	width:100%;
@@ -325,17 +293,6 @@ header:after{
 }
 
 
-
-
-
-
-
-
-
-
-
-footer{
-}
 footer p{
 	margin: 0 0 10px;
 }

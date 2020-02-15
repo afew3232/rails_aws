@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_action :authenticate_user!, :except=>[:root]
 	def root
 	end
 
@@ -6,7 +7,6 @@ class UsersController < ApplicationController
 		@book = Book.new
 		@user = User.find(current_user.id)
 		@users = User.all
-		@books = Book.all
 	end
 
 	def show
@@ -17,14 +17,17 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@user = User.find(current_user.id)
+		@user = User.find(params[:id])
+		if @user.id != current_user.id
+			redirect_to user_path(current_user.id)
+		end
 
 	end
 	def update
 		@user = User.find(current_user.id)
 		if @user.update(user_params)
 			flash[:notice] ="You have updated user successfully."
-			redirect_to books_path
+			redirect_to user_path(@user.id)
 		else
 			render :edit
 		end
